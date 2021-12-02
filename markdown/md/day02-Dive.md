@@ -1,37 +1,26 @@
----
-title: "Day 2 - Dive!"
-output: github_document
-knit: (function(inputFile, encoding) {
-    rmarkdown::render(inputFile, encoding = encoding, output_dir = "md") })
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-	echo = TRUE,
-	message = FALSE,
-	warning = FALSE
-)
-```
-
+Day 2 - Dive!
+================
 
 ## Setup and load data
 
-The first step is to load some libraries and get the data loaded into R. 
+The first step is to load some libraries and get the data loaded into R.
 
-
-```{r}
+``` r
 library(tidyverse)
 library(datapasta)
 ```
 
-Start by selecting the data and using Ctrl-C to copy. I’ve only ever used the dataframe function from this package so lets see if that works. Put your cursor in a code chunk and type df_paste(). Run that line of code and it will paste the data on your clipboard into the chunk. Add a object name to assign the data to and run the chunk again.
+Start by selecting the data and using Ctrl-C to copy. I’ve only ever
+used the dataframe function from this package so lets see if that works.
+Put your cursor in a code chunk and type df_paste(). Run that line of
+code and it will paste the data on your clipboard into the chunk. Add a
+object name to assign the data to and run the chunk again.
 
-```{r eval=FALSE, include=TRUE}
+``` r
 df_paste()
 ```
 
-
-```{r}
+``` r
 raw <- data.frame(
   stringsAsFactors = FALSE,
             text = c("forward 4", "down 9","forward 6",
@@ -238,24 +227,32 @@ raw <- data.frame(
 
 ## Part I
 
-The values need to be split in a direction and number of units. We can use the function `separate()` to split on the white space between direction and number of units.
+The values need to be split in a direction and number of units. We can
+use the function `separate()` to split on the white space between
+direction and number of units.
 
-```{r}
+``` r
 data <- raw %>%
   separate(col = text, into = c("direction", "units"), sep = " ") %>%
   mutate(units = as.numeric(units))
 ```
 
-First let's check all possible directions.
+First let’s check all possible directions.
 
-```{r}
+``` r
 data %>% 
   count(direction)
 ```
 
-If we convert the units associated with 'down' to negative integers we can check whether the submarine surfaces above zero during it's route.
+    ##   direction   n
+    ## 1      down 406
+    ## 2   forward 380
+    ## 3        up 214
 
-```{r}
+If we convert the units associated with ‘down’ to negative integers we
+can check whether the submarine surfaces above zero during it’s route.
+
+``` r
 vertical <- data %>% 
   mutate(units =  case_when(
     direction == "down" ~ units * -1,
@@ -265,9 +262,9 @@ vertical <- data %>%
     seq = row_number()) 
 ```
 
-Let's plot the vertical movement:
+Let’s plot the vertical movement:
 
-```{r}
+``` r
 vertical %>% 
   ggplot(aes(seq, cumsum)) +
   geom_line() +
@@ -276,45 +273,61 @@ vertical %>%
        title = "Sequence of vertical movements")
 ```
 
-OK, so the submarine never surfaces again.We can select it's final depth by extracting the last value using `tail()`.
+![](/Users/willemdekeyzer/Local%20folder%20R/AdventOfCode/markdown/md/day02-Dive_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
-```{r}
+OK, so the submarine never surfaces again.We can select it’s final depth
+by extracting the last value using `tail()`.
+
+``` r
 vertical %>% 
   select(down = cumsum) %>% 
   tail(n = 1)
 ```
 
+    ##     down
+    ## 620 -907
+
 Now we can calculate the sum of units in forward direction.
 
-```{r}
+``` r
 data %>% 
   filter(direction == "forward") %>% 
   summarize(forward = sum(units))
 ```
 
-So the number of forward units sums at 1905. 
+    ##   forward
+    ## 1    1905
+
+So the number of forward units sums at 1905.
 
 We need to multiply the units forward times the units down.
-```{r}
+
+``` r
 1905*907
 ```
 
-That's the right answer!
+    ## [1] 1727835
+
+That’s the right answer!
 
 ## Part II
 
-"In addition to horizontal position and depth, you'll also need to track a third value, aim, which also starts at 0. The commands also mean something entirely different than you first thought:
-- down X increases your aim by X units.
-- up X decreases your aim by X units.
-- forward X does two things:
-    - It increases your horizontal position by X units.
-    - It increases your depth by your aim multiplied by X."
+“In addition to horizontal position and depth, you’ll also need to track
+a third value, aim, which also starts at 0. The commands also mean
+something entirely different than you first thought: - down X increases
+your aim by X units. - up X decreases your aim by X units. - forward X
+does two things: - It increases your horizontal position by X units. -
+It increases your depth by your aim multiplied by X.”
 
-Wow, that's a more complicated task. We need to use the original data again and make some new calculations.
+Wow, that’s a more complicated task. We need to use the original data
+again and make some new calculations.
 
-First we must make sure that up and down result in the right aim. If the direction is up we make the unit negative so when we use `cumsum()` we get the right aim. After that we calculate the depth by multiplying the units forward with depth. 
+First we must make sure that up and down result in the right aim. If the
+direction is up we make the unit negative so when we use `cumsum()` we
+get the right aim. After that we calculate the depth by multiplying the
+units forward with depth.
 
-```{r}
+``` r
 output1 <- data %>% 
   mutate(t = case_when(
     direction == "up" ~ units * - 1,
@@ -325,30 +338,49 @@ output1 <- data %>%
     )
 output1 %>% 
   head()
-
 ```
 
-We can remove both the directions down and up since we don't need this anymore and the calculation op depth for these rows has no meaning.
+    ##   direction units  t aim depth
+    ## 1   forward     4  0   0     0
+    ## 2      down     9  9   9    81
+    ## 3   forward     6  0   9    54
+    ## 4      down     5  5  14    70
+    ## 5        up     2 -2  12    24
+    ## 6   forward     5  0  12    60
 
-```{r}
+We can remove the directions down and up since we don’t need this
+anymore and the calculation op depth for these rows has no meaning.
+
+``` r
 output2 <- output1 %>% 
   filter(direction == "forward")
 ```
 
-Now we take the last value of depth and multiply it with the sum of the units forward.
+Now we take the last value of depth and multiply it with the sum of the
+units forward.
 
-```{r}
+``` r
 output2 %>% 
   mutate(depth = cumsum(depth)) %>% 
   select(depth) %>% 
   tail(1)
+```
 
+    ##      depth
+    ## 380 810499
+
+``` r
 output2 %>%
   summarize(forward = sum(units))
 ```
 
-```{r}
+    ##   forward
+    ## 1    1905
+
+``` r
 1905 * 810499
 ```
 
-Alright, that's it for today.
+    ## [1] 1544000595
+
+Alright, that’s it for today.
