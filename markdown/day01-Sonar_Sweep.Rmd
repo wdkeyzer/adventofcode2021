@@ -1,10 +1,16 @@
 ---
-title: "Day 1 Sonar Sweep"
+title: "Day 1 - Sonar Sweep"
 output: github_document
+knit: (function(inputFile, encoding) {
+    rmarkdown::render(inputFile, encoding = encoding, output_dir = "md") })
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE,	warning = FALSE)
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
 ```
 
 
@@ -308,7 +314,7 @@ output2 %>%
   count(increased1)
 ```
 
-![screenshot of the first star received](img/day1 first star.png)
+![screenshot of the first star received](../img/day1 first star.png)
 
 ## Part II
 
@@ -342,4 +348,4 @@ output5 %>%
 
 Yes! Two gold stars.
 
-![twitter post completed first day](img/day1 twitter.png)
+![twitter post completed first day](../img/day1 twitter.png)
