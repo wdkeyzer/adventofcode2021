@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 The first step is to load some libraries and get the data loaded into R. 
 
-I've tried to load the data using `Rcurl` but the puzzle inputs differs by user and one needs to login to get to the puzzle input.The `datapasta` package might be helpful. It allows you to select, copy, and paste rectangular data into R.
+I've tried to load the data using `Rcurl` but the puzzle input differs by user and one needs to login to get to the puzzle input.The `datapasta` package might be helpful. It allows you to select, copy, and paste rectangular data into R.
 
 ```{r}
 library(tidyverse)
