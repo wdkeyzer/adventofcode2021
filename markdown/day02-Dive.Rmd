@@ -30,7 +30,6 @@ Start by selecting the data and using Ctrl-C to copy. I’ve only ever used the 
 df_paste()
 ```
 
-<div class="hidecode"></div>
 
 ```{r}
 raw <- data.frame(

@@ -20,10 +20,6 @@ object name to assign the data to and run the chunk again.
 df_paste()
 ```
 
-<div class="hidecode">
-
-</div>
-
 ``` r
 raw <- data.frame(
   stringsAsFactors = FALSE,
