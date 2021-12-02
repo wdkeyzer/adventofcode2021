@@ -316,7 +316,7 @@ output2 %>%
     ## 2       TRUE 1711
     ## 3         NA    1
 
-![screenshot of the first star received](img/day1%20first%20star.png)
+![screenshot of the first star received](../img/day1%20first%20star.png)
 
 ## Part II
 
@@ -360,4 +360,4 @@ output5 %>%
 
 Yes! Two gold stars.
 
-![twitter post completed first day](img/day1%20twitter.png)
+![twitter post completed first day](../img/day1%20twitter.png)
