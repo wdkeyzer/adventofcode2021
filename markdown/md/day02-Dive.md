@@ -340,6 +340,7 @@ output1 <- data %>%
     aim = cumsum(t),
     depth = units * aim
     )
+
 output1 %>% 
   head()
 ```

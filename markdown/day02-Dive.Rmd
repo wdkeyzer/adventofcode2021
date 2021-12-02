@@ -31,6 +31,7 @@ df_paste()
 ```
 
 <div class="hidecode"></div>
+
 ```{r}
 raw <- data.frame(
   stringsAsFactors = FALSE,
@@ -323,9 +324,9 @@ output1 <- data %>%
     aim = cumsum(t),
     depth = units * aim
     )
+
 output1 %>% 
   head()
-
 ```
 
 We can remove both the directions down and up since we don't need this anymore and the calculation op depth for these rows has no meaning.
