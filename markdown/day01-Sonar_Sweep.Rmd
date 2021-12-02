@@ -1,10 +1,17 @@
 ---
-title: "Day 1 Sonar Sweep"
+title: "Day 1 - Sonar Sweep"
 output: github_document
+knit: (function(inputFile, encoding) {
+    rmarkdown::render(inputFile, encoding = encoding, output_dir = "md") })
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE,	warning = FALSE)
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+
 ```
 
 
