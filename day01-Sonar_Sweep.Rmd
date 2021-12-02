@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE,	warning = FALSE)
 
 The first step is to load some libraries and get the data loaded into R. 
 
-I've tried to load the data using Rcurl but the puzzle inputs differs by user and one needs to login to get to the puzzle input.The `datapasta` package might be helpful. It allows you to select, copy, and paste rectangular data into R.
+I've tried to load the data using `Rcurl` but the puzzle inputs differs by user and one needs to login to get to the puzzle input.The `datapasta` package might be helpful. It allows you to select, copy, and paste rectangular data into R.
 
 ```{r}
 library(tidyverse)
@@ -21,7 +21,7 @@ library(datapasta)
 
 Start by selecting the data and using Ctrl-C to copy. I’ve only ever used the dataframe function from this package so lets see if that works. Put your cursor in a code chunk and type df_paste(). Run that line of code and it will paste the data on your clipboard into the chunk. Add a object name to assign the data to and run the chunk again.
 
-```{r}
+```{r eval=FALSE, include=TRUE}
 df_paste()
 ```
 
