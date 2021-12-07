@@ -7,3 +7,5 @@ This repo collects my attempts of my first participation to the Advent of Code c
 **[Day 1 - Sonar Sweep](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/md/day01-Sonar_Sweep.md)**
 
 **[Day 2 - Dive!](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/md/day02-Dive.md)**
+
+**[Day 5 - Hydrothermal Venture](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/md/day05-Hydrothermal_Venture.md)**
