@@ -421,6 +421,7 @@ Mode <- function(x) {
   ux[which.max(tabulate(match(x, ux)))]
 }
 
+
 gamma_df <- data %>% 
     summarise(across(.cols = 1:12, ~ Mode(.)))
 ```
@@ -506,12 +507,14 @@ Use the binary numbers in your diagnostic report to calculate the oxygen generat
 
 ### Solution
 
-Oxygen generator rate
+In order to find the oxygen generator rate determine the most common value.
 
 ```{r}
+Mode(data$`1`) 
+
 data %>%
-  Mode() 
-  
-  
+  filter(`1` == 1) %>% 
+  Mode(.$`2`)
+
 ```
 

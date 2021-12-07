@@ -1,0 +1,38 @@
+---
+title: "Day 4 - Giant Squid"
+output: github_document
+knit: (function(inputFile, encoding) {
+    rmarkdown::render(inputFile, encoding = encoding, output_dir = "md") })
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+
+## Setup and load data
+
+The first step is to load some libraries and get the data loaded into R. 
+
+
+```{r}
+library(tidyverse)
+library(datapasta)
+```
+
+Start by selecting the data and using Ctrl-C to copy. I’ve only ever used the dataframe function from this package so lets see if that works. Put your cursor in a code chunk and type df_paste(). Run that line of code and it will paste the data on your clipboard into the chunk. Add a object name to assign the data to and run the chunk again.
+
+```{r eval=FALSE, include=TRUE}
+df_paste()
+```
+
+
+## Part I
+
+
+## Part I
+
