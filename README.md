@@ -6,17 +6,18 @@ This repo collects my attempts of my first participation to the Advent of Code c
 
 [Advent of Code](https://adventofcode.com/2021) is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like. People use them as a speed contest, interview prep, company training, university coursework, practice problems, or to challenge each other. You don't need a computer science background to participate - just a little programming knowledge and some problem solving skills will get you pretty far. Nor do you need a fancy computer; every problem has a solution that completes in at most 15 seconds on ten-year-old hardware.
 
-**[Day 1 - Sonar Sweep](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/md/day01-Sonar_Sweep.md)**
+https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/2021/day01-Sonar_Sweep.Rmd
+**[Day 1 - Sonar Sweep](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/2021/day01-Sonar_Sweep.md)**
 
-**[Day 2 - Dive!](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/md/day02-Dive.md)**
+**[Day 2 - Dive!](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/2021/day02-Dive.md)**
 
-**[Day 3 - Binary Diagnostic"](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/day03-Binary_Diagnostic.Rmd)**
+**[Day 3 - Binary Diagnostic](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/2021/day03-Binary_Diagnostic.Rmd)**
 
-**[Day 4 - Giant Squid](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/day04-Giant_Squid.Rmd)**
+**[Day 4 - Giant Squid](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/2021/day04-Giant_Squid.Rmd)**
 
-**[Day 5 - Hydrothermal Venture](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/md/day05-Hydrothermal_Venture.md)**
+**[Day 5 - Hydrothermal Venture](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/2021/day05-Hydrothermal_Venture.md)**
 
-**[Day 9 - Smoke Basin](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/day09-Smoke_Basin.Rmd)**
+**[Day 9 - Smoke Basin](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/2021/day09-Smoke_Basin.Rmd)**
 
 ## 2022
 
