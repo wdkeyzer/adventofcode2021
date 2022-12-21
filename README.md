@@ -16,7 +16,7 @@ This repo collects my attempts of my first participation to the Advent of Code c
 
 **[Day 5 - Hydrothermal Venture](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/md/day05-Hydrothermal_Venture.md)**
 
-**[Day 9 - Smoke Basin]()**
+**[Day 9 - Smoke Basin](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/day09-Smoke_Basin.Rmd)**
 
 ## 2022
 

@@ -1,0 +1,40 @@
+---
+title: "Reading data from AoC into R"
+output: github_document
+knit: (function(inputFile, encoding) {
+    rmarkdown::render(inputFile, encoding = encoding, output_dir = "md") })
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+
+## Setup 
+
+The first step is to load some libraries and get the data loaded into R. 
+
+
+```{r}
+library(tidyverse)
+```
+
+
+## Function to build the URL of a day 
+
+```{r}
+
+aoc_build_url <- function(day, year = 2022) {
+  formatted_url <- paste0("adventofcode.com/",{{year}},"/day/",{{day}},"/input")
+  return(formatted_url)
+}
+
+aoc_build_url(1)
+
+
+```
+
