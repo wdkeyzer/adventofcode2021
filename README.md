@@ -1,4 +1,6 @@
-# Advent of Code 2021
+# Advent of Code
+
+## 2021
 
 This repo collects my attempts of my first participation to the Advent of Code contest. I will use R for solving the puzzles using reproducible code only.
 
@@ -8,4 +10,14 @@ This repo collects my attempts of my first participation to the Advent of Code c
 
 **[Day 2 - Dive!](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/md/day02-Dive.md)**
 
+**[Day 3 - Binary Diagnostic"](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/day03-Binary_Diagnostic.Rmd)**
+
+**[Day 4 - Giant Squid](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/day04-Giant_Squid.Rmd)**
+
 **[Day 5 - Hydrothermal Venture](https://github.com/wdkeyzer/adventofcode2021/blob/main/markdown/md/day05-Hydrothermal_Venture.md)**
+
+**[Day 9 - Smoke Basin]()**
+
+## 2022
+
+This year I will try to solve some puzzles again. First I will use **[this tutorial](https://colin-fraser.net/post/a-quick-tutorial-on-importing-data-from-advent-of-code-into-r/)** of Colin Fraser on importing data from AdventOfCode directly into R.   
